@@ -1,0 +1,26 @@
+name: Deploy to Digital Ocean
+on:
+  push:
+    branches: main
+env:
+  PRIVATE_KEY_PATH: ~/.ssh/do_git
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install Ruby and gems
+        uses: ruby/setup-ruby@55283cc23133118229fd3f97f9336ee23a179fcf # v1.146.0
+        with:
+          bundler-cache: true
+      - name: Install SSH key
+        run: |
+          mkdir -p -m 700 ~/.ssh
+          export PRIVATE_KEY_PATH=${{env.PRIVATE_KEY_PATH}}
+          echo "${{ secrets.DO_GIT_PRIVATE_KEY }}" > $PRIVATE_KEY_PATH
+          chmod 600 $PRIVATE_KEY_PATH
+      - name: Deploy via Capistrano
+        run: bundle exec cap staging deploy
+
