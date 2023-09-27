@@ -15,6 +15,7 @@ set :linked_dirs, %w[tmp/pids tmp/sockets log]
 set :rvm_type, :user
 set :rvm_ruby_version, File.read(File.expand_path('../.ruby-version', __dir__)).strip.split('-').last
 set :rvm_role, :app
+set :assets_roles, :app
 
 
 # define server here as we deploy just to one machine
