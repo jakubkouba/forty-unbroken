@@ -23,7 +23,7 @@ default: &default
   username: <%= ENV['DB_USER'] %>
   password: <%= ENV['DB_PASSWORD'] %>
   host: 127.0.0.1
-  port: 5433
+  port: 5435
 
 
 development:
