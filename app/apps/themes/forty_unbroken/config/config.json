@@ -1,0 +1,14 @@
+{
+  "name" : "Forty Unbroken",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::FortyUnbroken::MainHelper"
+  ],
+  "hooks": {
+    "on_active": ["forty_unbroken_on_install_theme"],
+    "on_inactive": ["forty_unbroken_on_uninstall_theme"],
+    "on_theme_settings": ["forty_unbroken_settings"]
+    //here all your hooks
+  }
+}
