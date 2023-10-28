@@ -329,6 +329,11 @@ GEM
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
     stringio (3.0.8)
+    tailwindcss-rails (2.0.31-x86_64-darwin)
+      railties (>= 6.0.0)
+    tailwindcss-rails (2.0.31-x86_64-linux)
+      railties (>= 6.0.0)
+    temple (0.10.3)
     thor (1.2.2)
     tilt (2.3.0)
     timeout (0.4.0)
@@ -370,6 +375,7 @@ DEPENDENCIES
   rspec-rails (~> 6.0.0)
   rubocop (~> 1.56.0)
   sass-rails (~> 5.0)
+  tailwindcss-rails
   tzinfo-data
 
 RUBY VERSION
