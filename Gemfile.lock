@@ -166,6 +166,10 @@ GEM
       railties (>= 3.2, < 8.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    haml (6.2.3)
+      temple (>= 0.8.2)
+      thor
+      tilt
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -359,6 +363,7 @@ DEPENDENCIES
   dotenv-rails
   draper (~> 4.0.2)
   ed25519 (>= 1.2, < 2.0)
+  haml
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.6)

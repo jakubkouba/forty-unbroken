@@ -5,6 +5,7 @@ ruby "3.2.2"
 
 gem "camaleon_cms", '~> 2.7.4'
 gem 'draper', '~> 4.0.2'
+gem 'haml'
 
 gem "rails", "~> 7.0.6"
 
