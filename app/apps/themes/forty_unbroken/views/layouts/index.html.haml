@@ -1,0 +1,58 @@
+!!!
+%html{lang: "en"}
+  %head
+    / META SECTION
+    %title= current_site.the_title
+    %meta{content: "text/html; charset=utf-8", "http-equiv" => "Content-Type"}/
+    %meta{content: "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{content: "width=device-width, initial-scale=1", name: "viewport"}/
+    / END META SECTION
+    = stylesheet_link_tag theme_asset_path("css/main")
+    = javascript_include_tag theme_asset_path("js/main.js")
+    = raw the_head
+  %body
+    / container
+    .container
+      / header
+      .navbar.navbar-primary
+        .navbar-header
+          %a#logo.navbar-brand{href: "#{current_site.the_url}"}= image_tag current_site.the_logo, class: "img-responsive"
+          %button.navbar-toggle{"data-target" => "#navbar-main", "data-toggle" => "collapse", type: "button"}
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+        #navbar-main.navbar-collapse.collapse
+          = raw get_nav_menu('main_menu', 'nav navbar-nav ')
+          %ul.nav.navbar-nav.navbar-right
+            - if signin?
+              %li.dropdown
+                %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                  %img{alt: "", src: "#{cama_current_user.decorate.the_avatar}", style: "max-width: 24px; border-radius: 50%"}/
+                  = cama_current_user.username
+                %ul.dropdown-menu
+                  %li
+                    %a{href: cama_admin_dashboard_path}= I18n.t('camaleon_cms.common.dashboard')
+                  %li
+                    %a{href: cama_admin_profile_path}= I18n.t('camaleon_cms.common.profile')
+                  %li
+                    %a{href: cama_admin_logout_path}= I18n.t('camaleon_cms.common.logout')
+            - else
+              %li.dropdown
+                %a#login-user.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+                  = I18n.t('camaleon_cms.common.login')
+                  \/ #{I18n.t('camaleon_cms.common.register')}
+                %ul.dropdown-menu
+                  %li
+                    %a{href: cama_admin_login_path}= I18n.t('camaleon_cms.common.login')
+                  %li
+                    %a{href: cama_admin_register_path}= I18n.t('camaleon_cms.common.register')
+          = raw current_site.draw_languages("language list-inline pull-right", true)
+      / ./header
+      .content
+        %i{class: 'fa-solid'}
+        %h1.text-8xl This is my contentsssssss
+        = yield
+      / footer
+      %footer
+      / ./footer
+    / ./container
