@@ -54,6 +54,8 @@ group :development, :test do
   gem 'bundler-audit', '~> 0.9.1'
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem 'dotenv-rails'
+  gem 'guard', '~> 2.18.0'
+  gem 'guard-rake', '~> 1.0.0'
   gem 'rspec-rails', '~> 6.0.0'
   gem 'rubocop', '~> 1.56.0'
 end

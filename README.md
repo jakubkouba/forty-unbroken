@@ -1,24 +1,11 @@
-# README
+# Forty Unbroken Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Personal blog build on the Cameloen CMS
 
-Things you may want to cover:
+## Assets
+Project uses [tailwind](https://tailwindcss.com/) for frontend.
+As it's not compatible with traditional Rails asset build pipeline we got to do few tweaks to make it work.
+The `tailwind.css` is compiled into the `app/assets/build` directory. From there it is compied to the `/apps/themes/forty_unbroken/assets/css` directory by the rake rask `copy_tailwind_css`.
+This is done automatically via [guard](https://github.com/guard/guard) and [guard-rake](https://github.com/rubyist/guard-rake) gemd which watches for changes being made to the `tailwind.css` file. The tailwind preprocessor and the guard are launched via [foreman](https://github.com/ddollar/foreman) via `Procfile.dev` with the following command `./bin/dev`
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Deployment
