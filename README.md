@@ -2,6 +2,19 @@
 
 ## Personal blog build on the Cameloen CMS
 
+## Run the app
+- `$ bundle`
+- Create `.env.development.local` file and enter env valiables `DB_USER` and `DB_PASSWORD`
+- `$ docker-compose --env-file .env.development.local up -d db`
+- `$ bundle exec rake db:create`
+- `$ bundle excec rake db:migrate`
+- `$ ./bin/dev` # create a tailwind.css from and compy that over tho the theme
+- `$ bundle exec rails s`
+- Go to browser and run `http://localhost:3000`
+- Enter name of the site
+- Keep the login details provided default are: user: admin, password: admin123
+
+
 ## Assets
 Project uses [tailwind](https://tailwindcss.com/) for frontend.
 As it's not compatible with traditional Rails asset build pipeline we got to do few tweaks to make it work.
