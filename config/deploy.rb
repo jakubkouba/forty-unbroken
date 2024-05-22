@@ -30,6 +30,8 @@ server 'fortyunbroken.com',
     forward_agent: false
   }
 
+before 'deploy:assets:precompile', 'deploy:build_and_copy_tailwind_css'
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
