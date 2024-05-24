@@ -47,3 +47,8 @@ System D uses the `systemctl` command for managing services
 
 - `$ sudo systemctl start puma_forty-unbroken_staging` # Start the service. The config of the service is found based on the name of the service
 - `$ sudo systemctl stop puma_forty-unbroken_staging` # Stop the service
+
+
+## TODO
+- [ ] Research modern blog layouts
+- [ ] Create Designs (Use Figma)
